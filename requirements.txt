@@ -1,0 +1,13 @@
+xgboost
+jupyter
+pandas
+numpy
+matplotlib
+scikit-learn
+tensorflow==2.0.0-rc1
+Flask
+aiohttp
+orjson
+gunicorn
+bjoern
+falcon
