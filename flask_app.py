@@ -1,13 +1,21 @@
-from flask import Flask
-from flask import request
-import orjson
+from flask import Flask, jsonify, request
+from models.resnet import load_model, score_model
+
+model = load_model()
 
 app = Flask(__name__)
 
 @app.route('/test', methods = ['POST'])
 def test():
-  val = request.get_json()
-  return val
+  try:
+    json = request.get_json(force=True)
+    x = json["data"]
+    result = score_model(model, x)
+    resp = jsonify(result)
+    return resp
+  except:
+    print("ERROR")
+    return { "error": True }
 
 
 if __name__ == '__main__':

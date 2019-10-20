@@ -11,3 +11,6 @@ orjson
 gunicorn
 bjoern
 falcon
+feather
+tables
+nltk
