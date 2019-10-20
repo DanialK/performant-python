@@ -1,7 +1,8 @@
+`PYTHONPATH=./ python services/sentiment_tensorflow_aiohttp.py`
 
 for bjoern `apt install libev-dev libevdev2`
 
-`wrk -t12 -c400 -d30s -s post.lua http://localhost:8080/test`
+`wrk -t12 -c400 -d30s -s post.lua http://localhost:8080/score`
 
 ## Resnet - aiohttp
 
@@ -10,8 +11,8 @@ python aiohttp_app.py
 ```
 
 ```
-wrk -t1 -c1 -d30s --timeout 10s -s post.lua http://localhost:8080/test
-Running 30s test @ http://localhost:8080/test
+wrk -t1 -c1 -d30s --timeout 10s -s post.lua http://localhost:8080/score
+Running 30s test @ http://localhost:8080/score
   1 threads and 1 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
     Latency   153.69ms  119.03ms   1.11s    97.26%
@@ -29,8 +30,8 @@ gunicorn aiohttp_app:app --bind localhost:8080 --worker-class aiohttp.worker.Gun
 ```
 
 ```
-wrk -t1 -c1 -d30s --timeout 10s -s post.lua http://localhost:8080/test
-Running 30s test @ http://localhost:8080/test
+wrk -t1 -c1 -d30s --timeout 10s -s post.lua http://localhost:8080/score
+Running 30s test @ http://localhost:8080/score
   1 threads and 1 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
     Latency   153.53ms  126.37ms   1.16s    96.85%
@@ -47,8 +48,8 @@ gunicorn flask_app:app --bind localhost:8080
 ```
 
 ```
-wrk -t1 -c1 -d30s --timeout 10s -s post.lua http://localhost:8080/test
-Running 30s test @ http://localhost:8080/test
+wrk -t1 -c1 -d30s --timeout 10s -s post.lua http://localhost:8080/score
+Running 30s test @ http://localhost:8080/score
   1 threads and 1 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
     Latency   161.98ms  121.96ms   1.13s    97.12%
@@ -66,8 +67,8 @@ python wsgi.py
 ```
 
 ```
-wrk -t1 -c1 -d30s --timeout 10s -s post.lua http://localhost:8080/test
-Running 30s test @ http://localhost:8080/test
+wrk -t1 -c1 -d30s --timeout 10s -s post.lua http://localhost:8080/score
+Running 30s test @ http://localhost:8080/score
   1 threads and 1 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
     Latency   159.91ms  127.41ms   1.17s    96.71%

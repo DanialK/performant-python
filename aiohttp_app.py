@@ -15,7 +15,7 @@ async def handle(request):
     return web.json_response({ "error": True })
 
 app = web.Application(client_max_size=100 * 1113559)
-app.add_routes([web.post('/test', handle)])
+app.add_routes([web.post('/score', handle)])
 
 if __name__ == '__main__':
     web.run_app(app)

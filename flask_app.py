@@ -5,7 +5,7 @@ model = load_model()
 
 app = Flask(__name__)
 
-@app.route('/test', methods = ['POST'])
+@app.route('/score', methods = ['POST'])
 def test():
   try:
     json = request.get_json(force=True)
