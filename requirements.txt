@@ -4,13 +4,12 @@ pandas
 numpy
 matplotlib
 scikit-learn
-tensorflow==2.0.0-rc1
+tensorflow
 Flask
 aiohttp
 orjson
 gunicorn
 bjoern
 falcon
-feather
 tables
 nltk

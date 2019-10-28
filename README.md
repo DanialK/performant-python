@@ -4,6 +4,13 @@ for bjoern `apt install libev-dev libevdev2`
 
 `wrk -t12 -c400 -d30s -s post.lua http://localhost:8080/score`
 
+
+docker build -f services/sentiment_tensorflow_aiohttp/Dockerfile -t sentiment_tensorflow_aiohttp .
+
+docker build -t sentiment_tensorflow_aiohttp .
+
+docker run -p 8080:8080 sentiment_tensorflow_aiohttp
+
 ## Resnet - aiohttp
 
 ```
